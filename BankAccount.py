@@ -50,10 +50,12 @@ class BankAccount:
         else:
             print("Transaction Denied. Insufficient fund.")
         
-
     def deposit(self, amount):
-        self._balance += amount
-        print(f"Deposited: {amount}. New Balance: {self._balance}")
+        if amount > 0:
+            self._balance += amount
+            print(f"Deposited: {amount}. New Balance: {self._balance}")
+        else:
+            print("Deposit amount must be positive.")
 
     @classmethod
     def bank_account_guidelines(cls):
